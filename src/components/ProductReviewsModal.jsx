@@ -116,9 +116,9 @@ export const ProductReviewsModal = ({ isOpen, onClose, product }) => {
                                     <div>
                                         <div className="flex items-center gap-2 mb-1">
                                             <StarRating rating={review.rating} />
-                                            <span className="text-xs text-slate-500 ml-2">User #{review.user_id}</span>
+                                            <span className="text-xs text-slate-500 ml-2">{review.username || `User #${review.user_id}`}</span>
                                         </div>
-                                        <p className="text-sm text-slate-300">{review.comment}</p>
+                                        <p className="text-sm text-slate-300 whitespace-pre-line">{review.comment}</p>
                                     </div>
                                     <button onClick={() => handleDelete(review._id)} className="text-slate-600 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity p-1">
                                         <Trash2 size={16} />
